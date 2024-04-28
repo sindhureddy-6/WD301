@@ -1,19 +1,19 @@
 import React from 'react'
 interface TaskCardProps {
   title: string;
-  Due?: string | null;
-  completed?: string | null; 
-  Assignee: string;
+  dueDate?: Date| null;
+  completedAtDate?:Date | null; 
+  assigneeName: string;
   card: string;
 }
-const TaskCard: React.FC<TaskCardProps> = (props) => {
+const TaskCard: React.FC<TaskCardProps> = ({title,dueDate,completedAtDate,assigneeName,card}) => {
   return (
       <div className="border p-5">
-          <p className="text-xl font-medium">{props.title}</p>
+          <p className="text-xl font-medium">{title}</p>
           <div>
-              {props.card === 'pending' && <p>Due on :{props.Due}</p>}
-              {props.card === 'done' && <p>Completed on :{props.completed}</p>}
-              Assignee: {props.Assignee}
+              {card === 'pending' && <p>Due on :{dueDate.toLocaleDateString()}</p>}
+              {card === 'done' && <p>Completed on :{completedAtDate.toLocaleDateString()}</p>}
+              Assignee: {assigneeName}
           </div>
     </div>
   )
