@@ -1,8 +1,8 @@
 import React from 'react'
 interface TaskCardProps {
   title: string;
-  dueDate?: Date| null;
-  completedAtDate?:Date | null; 
+  dueDate?: string| null;
+  completedAtDate?:string | null; 
   assigneeName: string;
   card: string;
 }
@@ -11,9 +11,9 @@ const TaskCard: React.FC<TaskCardProps> = ({title,dueDate,completedAtDate,assign
       <div className="border p-5">
           <p className="text-xl font-medium">{title}</p>
           <div>
-              {card === 'pending' && <p>Due on: DATE</p>}
-              {card === 'done' && <p>Completed on: DATE</p>}
-              Assignee: NAME
+        {card === 'pending' && <p>Due on: {dueDate}</p>}
+        {card === 'done' && <p>Completed on: {completedAtDate}</p>}
+              Assignee: {assigneeName}
           </div>
     </div>
   )

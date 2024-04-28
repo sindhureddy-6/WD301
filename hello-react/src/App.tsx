@@ -11,13 +11,13 @@ function App() {
         <div className="flex justify-center gap-5 mt-4">
           <div className="border p-3 rounded flex flex-col gap-2">
             <h3 className="text-xl font-bold p-2 text-center">Pending</h3>
-            <TaskCard title="Build the website with static content" dueDate={new Date('2024-04-30')} assigneeName="Rohith" card="pending" />
-            <TaskCard title="Add a blog" dueDate={new Date('2024-04-05') } assigneeName="Rohith s" card="pending" />
+            <TaskCard title="Build the website with static content" dueDate="10th April" assigneeName="Rohith" card="pending" />
+            <TaskCard title="Add a blog" dueDate="20th April" assigneeName="Rohith s" card="pending" />
           </div>
           <div className="border p-3 rounded flex flex-col gap-2">
             <h3 className="text-xl font-bold p-2 text-center">Done</h3>
-            <TaskCard title="Design the mockup" completedAtDate={new Date('2024-03-30')} assigneeName="Sindhu M" card="done" />
-            <TaskCard title="Get permission from Principal" completedAtDate={new Date('2024-03-05') }  assigneeName="Sindhu R" card="done"/>
+            <TaskCard title="Design the mockup" completedAtDate="10th March" assigneeName="Sindhu M" card="done" />
+            <TaskCard title="Get permission from Principal" completedAtDate="15th March"  assigneeName="Sindhu R" card="done"/>
           </div>
          </div>
       </div>
