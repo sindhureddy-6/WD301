@@ -1,6 +1,12 @@
 import React from 'react'
-
-function TaskCard(props) {
+interface TaskCardProps {
+  title: string;
+  Due?: string | null;
+  completed?: string | null; 
+  Assignee: string;
+  card: string;
+}
+const TaskCard: React.FC<TaskCardProps> = (props) => {
   return (
       <div className="border p-5">
           <p className="text-xl font-medium">{props.title}</p>
