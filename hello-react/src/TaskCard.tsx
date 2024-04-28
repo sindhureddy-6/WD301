@@ -1,8 +1,8 @@
 import React from 'react'
 interface TaskCardProps {
   title: string;
-  dueDate?: string| null;
-  completedAtDate?:string | null; 
+  dueDate?: string;
+  completedAtDate?: string;
   assigneeName: string;
   card: string;
 }
