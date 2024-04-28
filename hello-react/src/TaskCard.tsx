@@ -11,18 +11,18 @@ const TaskCard: React.FC<TaskCardProps> = ({title,dueDate,completedAtDate,assign
       <div className="border p-5">
           <p className="text-xl font-medium">{title}</p>
           <div>
-              {card === 'pending' && <p>Due on :{dueDate.toLocaleDateString('en-US', {
+              {card === 'pending' && <p>Due on: {dueDate.toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
   })}</p>}
-              {card === 'done' && <p>Completed on :{completedAtDate.toLocaleDateString('en-US', {
+              {card === 'done' && <p>Completed on: {completedAtDate.toLocaleDateString('en-US', {
   
     year: 'numeric',
     month: 'long',
     day: 'numeric',
   })}</p>}
-              Assignee : {assigneeName}
+              Assignee: {assigneeName}
           </div>
     </div>
   )
