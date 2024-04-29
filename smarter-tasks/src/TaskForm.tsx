@@ -30,8 +30,21 @@ class TaskForm extends React.Component<TaskFormProps, TaskFormState> {
   render(){
     return (
       <form onSubmit={this.addTask}>
-        <input className="mr-3 border p-2" type="text" value={this.state.title} onChange={this.titleChanged}/>
-        <button className="border p-1 bg-gray-300 rounded"type="submit">Add item</button>
+        <div className="flex flex-row justify-start gap-14">
+          <label  className="font-medium p-2" htmlFor="todoTitle">Title :</label>
+          <input className="border rounded p-1" id="todoTitle" type="text" value={this.state.title} onChange={this.titleChanged} required/>
+        </div>
+        <div className="flex flex-row justify-start gap-1 m-1">
+          <label className="font-medium p-2" htmlFor="todoDescription">Description :</label>
+        <textarea className="border rounded p-1" name="description" id="todoDescription" cols={25} rows={2} required></textarea>
+        </div>
+        <div className="flex flex-row justify-start gap-10 m-1">
+          <label className="font-medium p-2" htmlFor="todoDueDate">Due Date :</label>
+          <input className="border rounded p-1" type="Date" id="todoDueDate" required/>
+        </div>
+        <div>
+        <button className="border p-1 bg-gray-300 rounded mt-3" id="addTaskButton" type="submit">Add item</button>
+        </div>
       </form>
     )
   }
