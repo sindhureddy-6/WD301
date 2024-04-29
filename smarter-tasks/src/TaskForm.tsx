@@ -30,8 +30,8 @@ class TaskForm extends React.Component<TaskFormProps, TaskFormState> {
   render(){
     return (
       <form onSubmit={this.addTask}>
-        <input type="text" value={this.state.title} onChange={this.titleChanged}/>
-        <button type="submit">Add item</button>
+        <input className="mr-3 border p-2" type="text" value={this.state.title} onChange={this.titleChanged}/>
+        <button className="border p-1 bg-gray-300 rounded"type="submit">Add item</button>
       </form>
     )
   }
