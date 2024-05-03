@@ -4,7 +4,7 @@ const NotFound = () => {
   const Navigate = useNavigate();
 
   const redirectToHome = () => {
-    Navigate("/");
+    Navigate("/home");
   };
 
   return (
