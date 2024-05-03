@@ -14,6 +14,7 @@ const TaskApp = () => {
     },
   );
   const addTask = (task: TaskItem) => {
+    console.log(task);
     setTaskAppState({ tasks: [...taskAppState.tasks, task] });
   };
   const deleteTask = (taskToDelete: TaskItem) => {

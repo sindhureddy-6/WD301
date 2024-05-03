@@ -1,5 +1,5 @@
 import React from "react";
-
+import { v4 as uuidv4 } from "uuid";
 import { TaskItem } from "./types";
 interface TaskFormProps {
   addTask: (task: TaskItem) => void;
@@ -17,19 +17,16 @@ function TaskForm(props: TaskFormProps) {
     dueDate: "",
   });
   const titleChanged: React.ChangeEventHandler<HTMLInputElement> = (event) => {
-    console.log(`${event.target.value}`);
     setFormState({ ...formState, title: event.target.value });
   };
   const descriptionChanged: React.ChangeEventHandler<HTMLInputElement> = (
     event,
   ) => {
-    console.log(`${event.target.value}`);
     setFormState({ ...formState, description: event.target.value });
   };
   const dueDateChanged: React.ChangeEventHandler<HTMLInputElement> = (
     event,
   ) => {
-    console.log(`${event.target.value}`);
     setFormState({ ...formState, dueDate: event.target.value });
   };
   const addTask: React.FormEventHandler<HTMLFormElement> = (event) => {
@@ -38,7 +35,12 @@ function TaskForm(props: TaskFormProps) {
     if (formState.title.length === 0 || formState.dueDate.length === 0) {
       return;
     }
-    props.addTask(formState);
+    const id: string = uuidv4();
+    const formStateWithId: TaskFormState & { id: string } = {
+      ...formState,
+      id,
+    };
+    props.addTask(formStateWithId);
     setFormState({ title: "", description: "", dueDate: "" });
   };
   return (
