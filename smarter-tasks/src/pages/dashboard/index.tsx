@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-
+import { useNavigate } from "react-router-dom";
 const Dashboard: React.FC = () => {
   const [userData, setUserData] = useState<{ name: string; email: string } | null>(null);
-
+const navigate = useNavigate();
   useEffect(() => {
     const userDataString = localStorage.getItem('userData');
     if (userDataString) {
@@ -16,7 +16,8 @@ const Dashboard: React.FC = () => {
   const handleClick = () => {
     localStorage.removeItem('authToken');
     localStorage.removeItem('userData');
-    setUserData(null); 
+      setUserData(null); 
+      navigate("/signin")
   };
 
   return (
