@@ -4,10 +4,10 @@ import Signin from "../pages/signin"
 import Signup from "../pages/signup"
 import Logout from "../pages/logout";
 import AccountLayout from "../layouts/account"
-import ProtectedRoute from "../ProtectedRoute"
+import ProtectedRoute from "./ProtectedRoute"
 import Projects from "../pages/projects"
 import Members from "../pages/members"
-import NotFound from "../pages/NotFound";
+import Notfound from "../pages/Notfound";
 
 const router = createBrowserRouter([
     { path: "/", element: <Navigate to="/account/projects" replace /> },
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
     },
     {
         path: "/notfound",
-        element: <NotFound />
+        element: <Notfound />
     },
     
 ]);
